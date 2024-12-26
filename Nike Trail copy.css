@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter";
+  box-sizing: border-box;
+}
+
+body {
+  background: #f8f8f8;
+  color: #161616;
+}
+
+.container {
+  padding: 20px 10%;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.logo {
+  width: 70px;
+}
+
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 10px 20px;
+}
+
+nav ul li a {
+  color: #161616;
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: "";
+  width: 0;
+
+  height: 3px;
+  background: #161616;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+.playboi-carti {
+  margin-top: 6.5%;
+  font-size: 40px;
+}
+
+.playboi-carti h1 {
+  font-size: 200px;
+  margin-top: 20px;
+}
+
+.WLRheader {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.WLRheader img {
+  width: 400%;
+  max-width: 1520px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.Paragraph-one {
+  margin-bottom: 80px;
+  font-size: 20px;
+  line-height: 35px;
+}
+
+.title {
+  margin-top: 80px;
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+
+.Paragraph {
+  margin-bottom: 30px;
+}
+
+.nikegrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 30px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.nikegrid img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.WLRheader-three {
+  display: flex;
+  gap: 30px;
+  size: 50px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.WLRheader-three img {
+  width: 745px;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.WLRheader-three-10 {
+  display: flex;
+  gap: 30px;
+  size: 50px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.WLRheader-three-10 img {
+  width: 745px;
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/*-----Footer--------*/
+
+.copyright {
+  width: 100%;
+  text-align: center;
+  padding: 25px 0;
+  background: #ece9e9;
+  font-weight: 300;
+  margin-top: 100px;
+}
+
+.work {
+  margin-bottom: 25px;
+}
+
+.highlight-red {
+  color: red;
+  text-decoration: none;
+}

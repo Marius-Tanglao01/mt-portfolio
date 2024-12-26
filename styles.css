@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f8f8f8;
+  color: #161616;
+  line-height: 1.6;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  padding: 20px 5%;
+  margin: 0 auto;
+}
+
+/* Navigation Styles */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.logo {
+  width: 70px;
+  max-width: 100px;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 10px 15px;
+}
+
+nav ul li a {
+  color: #161616;
+  text-decoration: none;
+  font-size: 16px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background: #161616;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Header Styles */
+.playboi-carti {
+  margin-top: 6.5%;
+}
+
+.playboi-carti h1 {
+  font-size: clamp(2rem, 10.5vw, 5rem);
+  margin-top: 20px;
+}
+
+.playboi-carti p {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  line-height: 37px;
+}
+
+/* Portfolio Styles */
+#Portfolio {
+  padding: 100px 0;
+}
+
+#Portfolio .worklist {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 2000px;
+  margin: 0 auto;
+}
+
+.img-container {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 744 / 582;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+#Portfolio .work img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.work img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.work h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.work p {
+  font-size: 1rem;
+  margin-top: -10px;
+}
+
+.work {
+  margin-bottom: 20px;
+}
+
+/* Call to Action */
+.call-to-action-playboi-carti {
+  margin-top: 6.5%;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  text-align: left;
+  line-height: 1.4;
+}
+
+.highlight-red {
+  color: red;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.highlight-red:hover {
+  color: darkred;
+}
+
+/* Footer */
+.copyright {
+  width: 100%;
+  text-align: center;
+  padding: 25px 0;
+  background: #ece9e9;
+  font-weight: 300;
+}
+
+/* Responsive Breakpoints */
+/* Mobile Devices */
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 10px 3%;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  #Portfolio .worklist {
+    grid-template-columns: 1fr;
+  }
+
+  .img-container {
+    aspect-ratio: 1 / 1;
+  }
+
+  .playboi-carti h1 {
+    text-align: left;
+  }
+
+  .playboi-carti p {
+    text-align: left;
+    line-height: 25px;
+  }
+}
+
+/* Tablets */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  #Portfolio .worklist {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .playboi-carti p {
+    text-align: left;
+    line-height: 25px;
+  }
+}
+
+/* Large Screens & 3072x1920 */
+@media screen and (min-width: 3072px) {
+  .container {
+    max-width: 2800px;
+    padding: 40px 10%;
+  }
+
+  .playboi-carti h1 {
+    font-size: 8rem;
+  }
+
+  #Portfolio .worklist {
+    gap: 50px;
+  }
+
+  .img-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}
