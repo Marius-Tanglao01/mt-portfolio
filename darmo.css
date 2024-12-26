@@ -409,6 +409,11 @@ nav ul li a:hover::after {
     font-size: 1rem;
     text-align: left;
   }
+
+  .Paragraph-one-one {
+    font-size: 1rem;
+    text-align: left;
+  }
 }
 
 /* Tablets */
