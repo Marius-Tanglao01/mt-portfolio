@@ -239,7 +239,6 @@ nav ul li a:hover::after {
   height: auto;
   aspect-ratio: 744 / 582;
   overflow: hidden;
-  border-radius: 10px;
   margin-bottom: 15px;
 }
 
