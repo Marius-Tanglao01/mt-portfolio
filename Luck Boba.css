@@ -91,10 +91,11 @@ nav ul li a:hover::after {
 .bobaheader img,
 .bobaheader video {
   width: 100%;
-  max-width: 1515px;
+  max-width: 1520px;
   height: auto;
   margin-bottom: 10px;
   object-fit: cover;
+  align-items: center;
 }
 
 .Paragraph-one {
