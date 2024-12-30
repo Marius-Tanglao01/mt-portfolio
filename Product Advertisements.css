@@ -89,12 +89,23 @@ nav ul li a:hover::after {
 }
 
 .WLRheader {
-  text-align: center;
+  text-align: left;
   margin-top: 20px;
 }
 
 .WLRheader img {
   width: 100%;
+  max-width: 1520px;
+  height: auto;
+}
+
+.WLRheadervb {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.WLRheadervb img {
+  width: 99.3%;
   max-width: 1520px;
   height: auto;
 }

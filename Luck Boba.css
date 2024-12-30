@@ -85,13 +85,28 @@ nav ul li a:hover::after {
 
 .bobaheader {
   margin-top: 20px;
-  text-align: left;
-  align-items: left;
+  text-align: center;
+  width: 100%;
 }
 
 .bobaheader img,
 .bobaheader video {
   width: 100%;
+  max-width: 1520px;
+  height: auto;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+.bobaheaderig {
+  margin-top: 20px;
+  text-align: center;
+  width: 99.3%;
+}
+
+.bobaheaderig img,
+.bobaheaderig video {
+  width: 99.3%;
   max-width: 1520px;
   height: auto;
   margin-bottom: 10px;
