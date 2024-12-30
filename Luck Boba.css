@@ -85,8 +85,8 @@ nav ul li a:hover::after {
 
 .bobaheader {
   margin-top: 20px;
-  text-align: center;
-  align-items: center;
+  text-align: left;
+  align-items: left;
 }
 
 .bobaheader img,
