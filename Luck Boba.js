@@ -1,6 +1,6 @@
 // Select all gallery images
 const images = document.querySelectorAll(
-  ".bobaheader img, .bobaheader-three img, .bobaheader-four img, .bobaheader-five img, .bobaheader-six img "
+  ".bobaheader img, .bobaheader-three img, .bobaheader-four img, .bobaheader-five img, .bobaheader-six img, .bobaheaderig img "
 );
 const lightbox = document.querySelector(".lightbox");
 const lightboxImg = lightbox.querySelector("img");

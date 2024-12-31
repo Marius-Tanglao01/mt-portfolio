@@ -1,5 +1,5 @@
 const images = document.querySelectorAll(
-  ".WLRheader img, .WLRheaderup img, .WLRheader-three img"
+  ".WLRheader img, .WLRheaderup img, .WLRheader-three img, .WLRheadervb img"
 );
 const lightbox = document.querySelector(".lightbox");
 const lightboxImg = lightbox.querySelector("img");
