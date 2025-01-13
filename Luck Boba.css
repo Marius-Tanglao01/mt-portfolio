@@ -9,13 +9,14 @@ body {
   background: #f8f8f8;
   color: #161616;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 .container {
-  width: 100%;
-  max-width: 1440px;
-  padding: 20px 5%;
+  width: min(100%, 1440px);
+  padding: 20px clamp(20px, 5%, 80px);
   margin: 0 auto;
+  overflow-x: hidden;
 }
 
 nav {
@@ -101,12 +102,12 @@ nav ul li a:hover::after {
 .bobaheaderig {
   margin-top: 20px;
   text-align: center;
-  width: 99.3%;
+  width: 100%;
 }
 
 .bobaheaderig img,
 .bobaheaderig video {
-  width: 99.3%;
+  width: 100%;
   max-width: 1520px;
   height: auto;
   margin-bottom: 10px;
@@ -131,73 +132,60 @@ nav ul li a:hover::after {
   font-size: clamp(2rem, 10.5vw, 4rem);
 }
 
-.bobaheader-three {
+.bobaheader-three,
+.bobaheader-four,
+.bobaheader-five,
+.bobaheader-six {
   display: flex;
-  gap: 20px;
+  gap: clamp(10px, 2vw, 20px);
   justify-content: center;
-  margin-top: 10px;
+  align-items: center;
+  width: 100%;
+  max-width: 1440px;
+  margin: 20px auto;
+  flex-wrap: wrap;
 }
 
 .bobaheader-three img {
-  margin-top: 20px;
-  width: 605px;
-  max-width: 50%;
+  width: clamp(250px, calc(50% - 20px), 605px);
   height: auto;
+  object-fit: cover;
+  margin-top: 20px;
   margin-bottom: 20px;
-}
-
-.bobaheader-four {
-  display: flex;
-  gap: 25px;
-  justify-content: center;
 }
 
 .bobaheader-four img {
-  width: 400px;
-  max-width: 33.33%;
+  width: clamp(200px, calc(33.33% - 20px), 400px);
   height: auto;
   margin-bottom: 20px;
   margin-top: 20px;
+  object-fit: cover;
 }
 
 .bobaheader-five {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-.bobaheader-five img.proto1 {
-  width: 100%;
-  height: 100%;
-  margin-bottom: 20px;
-}
-
+.bobaheader-five img.proto1,
 .bobaheader-five img.proto3 {
-  width: 83%;
-  height: 83%;
+  width: clamp(250px, calc(50% - 20px), 700px);
+  height: auto;
   margin-bottom: 20px;
+  object-fit: cover;
 }
 
 .bobaheader-six {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-.bobaheader-six img.proto1 {
-  width: 100%;
-  height: 100%;
-  margin-bottom: 20px;
-}
-
+.bobaheader-six img.proto1,
 .bobaheader-six img.proto3 {
-  width: 100%;
-  height: 100%;
+  width: clamp(250px, calc(50% - 20px), 700px);
+  height: auto;
   margin-bottom: 20px;
+  object-fit: cover;
 }
 
 .Paragraph-flex {
@@ -227,7 +215,7 @@ nav ul li a:hover::after {
   margin-top: 100px;
 }
 
-/* Add lightbox CSS */
+/* Lightbox styles */
 .lightbox {
   display: none;
   position: fixed;
@@ -290,19 +278,9 @@ nav ul li a:hover::after {
 .lightbox-prev {
   left: 20px;
 }
+
 .lightbox-next {
   right: 20px;
-}
-
-@media (max-width: 768px) {
-  .lightbox-nav {
-    padding: 10px;
-    font-size: 24px;
-  }
-
-  .lightbox-close {
-    font-size: 24px;
-  }
 }
 
 /* Call to Action */
@@ -318,7 +296,6 @@ nav ul li a:hover::after {
 }
 
 /* Portfolio Styles */
-
 #Portfolio {
   padding: 20px 0;
 }
@@ -336,7 +313,6 @@ nav ul li a:hover::after {
   height: auto;
   aspect-ratio: 744 / 582;
   overflow: hidden;
-
   margin-bottom: 15px;
 }
 
@@ -372,14 +348,61 @@ nav ul li a:hover::after {
   margin-top: 100px;
 }
 
-@media screen and (max-width: 768px) {
-  #Portfolio .worklist {
-    grid-template-columns: 1fr; /* Changes from 2 columns to 1 */
-    gap: 20px; /* Optionally reduce gap for mobile */
+/* Media Queries */
+@media screen and (min-width: 1440px) {
+  .bobaheader-three,
+  .bobaheader-four,
+  .bobaheader-five,
+  .bobaheader-six {
+    padding: 0 20px;
   }
 }
 
-/* Mobile Screens */
+@media screen and (max-width: 1024px) {
+  .bobaheader-three img,
+  .bobaheader-four img,
+  .bobaheader-five img.proto1,
+  .bobaheader-five img.proto3,
+  .bobaheader-six img.proto1,
+  .bobaheader-six img.proto3 {
+    width: calc(50% - 10px);
+  }
+
+  .lightbox-nav {
+    padding: 10px;
+    font-size: 24px;
+  }
+
+  .lightbox-close {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #Portfolio .worklist {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .bobaheader-three,
+  .bobaheader-four,
+  .bobaheader-five,
+  .bobaheader-six {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .bobaheader-three img,
+  .bobaheader-four img,
+  .bobaheader-five img.proto1,
+  .bobaheader-five img.proto3,
+  .bobaheader-six img.proto1,
+  .bobaheader-six img.proto3 {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .container {
     padding: 10px 3%;
@@ -392,35 +415,6 @@ nav ul li a:hover::after {
 
   nav ul li {
     margin: 10px 0;
-  }
-
-  .bobaheader-three,
-  .bobaheader-four,
-  .bobaheader-five,
-  .bobaheader-six {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .bobaheader-three img,
-  .bobaheader-four img,
-  .bobaheader-six img.proto1,
-  .bobaheader-six img.proto3 {
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 10px;
-  }
-
-  .bobaheader-five {
-    height: auto;
-    flex-direction: column;
-  }
-
-  .bobaheader-five img.proto1,
-  .bobaheader-five img.proto3 {
-    width: 100%;
-    height: 100%;
-    margin-bottom: 10px;
   }
 
   .Paragraph-flex {
@@ -436,21 +430,6 @@ nav ul li a:hover::after {
   }
 }
 
-/* Tablets */
-@media screen and (min-width: 481px) and (max-width: 768px) {
-  .bobaheader-three img,
-  .bobaheader-four img,
-  .bobaheader-six img.proto1,
-  .bobaheader-six img.proto3 {
-    max-width: 45%;
-  }
-
-  .bobaheader-five {
-    height: 100%;
-  }
-}
-
-/* Extra Large Screens */
 @media screen and (min-width: 3072px) {
   .container {
     max-width: 2800px;
