@@ -208,7 +208,6 @@ nav ul li a:hover::after {
   color: darkred;
 }
 
-/* Call to Action */
 .call-to-action {
   margin-top: 6.5%;
   font-size: clamp(1.5rem, 4vw, 3rem);
@@ -219,8 +218,6 @@ nav ul li a:hover::after {
 .call-to-action h2 {
   font-size: clamp(2rem, 10.5vw, 5rem);
 }
-
-/* Portfolio Styles */
 
 #Portfolio {
   padding: 20px 0;
@@ -274,95 +271,6 @@ nav ul li a:hover::after {
   margin-top: 100px;
 }
 
-@media screen and (max-width: 768px) {
-  #Portfolio .worklist {
-    grid-template-columns: 1fr; /* Changes from 2 columns to 1 */
-    gap: 20px; /* Optionally reduce gap for mobile */
-  }
-}
-/* Responsive Design */
-@media screen and (max-width: 480px) {
-  .container {
-    padding: 10px 3%;
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav ul li {
-    margin: 10px 0;
-  }
-
-  .playboi-carti h1,
-  .playboi-carti h2 {
-    font-size: 2rem;
-    text-align: left;
-  }
-
-  .title {
-    font-size: 1.5rem;
-    text-align: left;
-  }
-
-  .Paragraph,
-  .Paragraph-one,
-  .Paragraph-one-one {
-    font-size: 1rem;
-    text-align: left;
-  }
-
-  .WLRheader-three,
-  .WLRheader-three-10,
-  .WLRheader-four,
-  .WLRheader-five {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .WLRheader-three img,
-  .WLRheader-three-10 img,
-  .WLRheader-four img {
-    width: 100%;
-  }
-
-  .Postergrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-}
-
-@media screen and (min-width: 3072px) {
-  .container {
-    max-width: 2800px;
-    padding: 40px 10%;
-  }
-
-  .WLRheader-three img,
-  .WLRheader-three-10 img,
-  .WLRheader-four img {
-    max-width: 900px;
-  }
-
-  .playboi-carti h1,
-  .playboi-carti h2 {
-    font-size: 6rem;
-  }
-
-  .Paragraph,
-  .Paragraph-one,
-  .Paragraph-one-one {
-    font-size: 2rem;
-  }
-
-  .Postergrid {
-    grid-template-columns: repeat(5, 1fr);
-    gap: 40px;
-  }
-}
-
-/* Add lightbox CSS */
 .lightbox {
   display: none;
   position: fixed;
@@ -425,6 +333,241 @@ nav ul li a:hover::after {
 .lightbox-prev {
   left: 20px;
 }
+
 .lightbox-next {
   right: 20px;
+}
+
+/* MacBook Air (2560 x 1600) */
+@media screen and (min-width: 2560px) and (max-width: 2880px) {
+  .container {
+    max-width: 2400px;
+    padding: 30px 8%;
+  }
+
+  .playboi-carti h1 {
+    font-size: 5rem;
+  }
+
+  .playboi-carti h2 {
+    font-size: 4rem;
+  }
+
+  .title {
+    font-size: 3.5rem;
+  }
+
+  .Paragraph,
+  .Paragraph-one,
+  .Paragraph-one-one {
+    font-size: 1.8rem;
+    line-height: 1.7;
+  }
+
+  #Portfolio .worklist {
+    gap: 60px;
+    max-width: 2300px;
+  }
+
+  .work h2 {
+    font-size: 2rem;
+  }
+
+  .work p {
+    font-size: 1.4rem;
+  }
+
+  .img-container {
+    aspect-ratio: 16 / 12;
+  }
+
+  nav ul li a {
+    font-size: 1.2rem;
+  }
+
+  .logo {
+    width: 90px;
+  }
+
+  .WLRheader img,
+  .WLRheader-five-six img {
+    max-width: 2400px;
+  }
+
+  .WLRheader-three img,
+  .WLRheader-three-10 img,
+  .WLRheader-four img,
+  .WLRheader-three-mok img {
+    max-width: 1100px;
+  }
+}
+
+/* Pro Display XDR (6016 x 3384) */
+@media screen and (min-width: 6016px) {
+  .container {
+    max-width: 5600px;
+    padding: 60px 12%;
+  }
+
+  .playboi-carti h1 {
+    font-size: 8rem;
+  }
+
+  .playboi-carti h2 {
+    font-size: 6rem;
+  }
+
+  .title {
+    font-size: 5rem;
+    margin-top: 120px;
+  }
+
+  .Paragraph,
+  .Paragraph-one,
+  .Paragraph-one-one {
+    font-size: 2.5rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+  }
+
+  #Portfolio .worklist {
+    gap: 100px;
+    max-width: 5200px;
+  }
+
+  .work h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+
+  .work p {
+    font-size: 2rem;
+    margin-top: -15px;
+  }
+
+  .img-container {
+    aspect-ratio: 16 / 12;
+  }
+
+  nav ul li {
+    margin: 20px 30px;
+  }
+
+  nav ul li a {
+    font-size: 2rem;
+  }
+
+  nav ul li a::after {
+    height: 5px;
+    bottom: -10px;
+  }
+
+  .logo {
+    width: 140px;
+  }
+
+  .WLRheader img,
+  .WLRheader-five-six img {
+    max-width: 5600px;
+  }
+
+  .WLRheader-three,
+  .WLRheader-three-10,
+  .WLRheader-four {
+    gap: 40px;
+    margin-top: 60px;
+  }
+
+  .WLRheader-three img,
+  .WLRheader-three-10 img,
+  .WLRheader-four img,
+  .WLRheader-three-mok img {
+    max-width: 2400px;
+  }
+
+  .Postergrid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px;
+  }
+
+  .copyright {
+    font-size: 2rem;
+    padding: 40px 0;
+    margin-top: 200px;
+  }
+
+  .lightbox-content {
+    max-width: 95%;
+    max-height: 95vh;
+  }
+
+  .lightbox-close {
+    font-size: 60px;
+    top: -80px;
+  }
+
+  .lightbox-nav {
+    font-size: 60px;
+    padding: 40px;
+  }
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  #Portfolio .worklist {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 10px 3%;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  .playboi-carti h1,
+  .playboi-carti h2 {
+    font-size: 2rem;
+    text-align: left;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+
+  .Paragraph,
+  .Paragraph-one,
+  .Paragraph-one-one {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .WLRheader-three,
+  .WLRheader-three-10,
+  .WLRheader-four,
+  .WLRheader-five {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .WLRheader-three img,
+  .WLRheader-three-10 img,
+  .WLRheader-four img {
+    width: 100%;
+  }
+
+  .Postergrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
 }
