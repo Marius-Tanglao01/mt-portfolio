@@ -9,20 +9,23 @@ body {
   background: #f8f8f8;
   color: #161616;
   line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 .container {
-  width: 100%;
-  max-width: 1440px;
-  padding: 20px 5%;
+  width: min(100%, 1440px);
+  padding: 20px clamp(20px, 5%, 80px);
   margin: 0 auto;
+  overflow-x: hidden;
 }
 
+/* Navigation styles remain the same */
 nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .logo {
@@ -39,31 +42,10 @@ nav ul li {
   margin: 10px 15px;
 }
 
-nav ul li a {
-  color: #161616;
-  text-decoration: none;
-  font-size: 16px;
-  position: relative;
-  transition: color 0.3s ease;
-}
-
-nav ul li a::after {
-  content: "";
-  width: 0;
-  height: 3px;
-  background: #161616;
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  transition: 0.5s;
-}
-
-nav ul li a:hover::after {
-  width: 100%;
-}
-
+/* Text content styles */
 .playboi-carti {
   margin-top: 6.5%;
+  width: 100%;
 }
 
 .playboi-carti h1 {
@@ -82,20 +64,18 @@ nav ul li a:hover::after {
   font-size: clamp(1.5rem, 4vw, 2.5rem);
 }
 
+/* Paragraph styles */
 .Paragraph,
-.Paragraph-one {
-  margin-bottom: 30px;
-  font-size: clamp(1.5rem, 3vw, 1.2rem);
-  margin-bottom: 20px;
-}
-
+.Paragraph-one,
 .Paragraph-one-one {
   margin-bottom: 30px;
-  font-size: clamp(1.5rem, 4vw, 1.25rem);
+  font-size: clamp(1.5rem, 3vw, 1.2rem);
   line-height: 1.6;
 }
 
+/* WLR Header styles - Fixed overflow issues */
 .WLRheader {
+  width: 100%;
   text-align: center;
   margin-top: 20px;
 }
@@ -104,84 +84,68 @@ nav ul li a:hover::after {
   width: 100%;
   max-width: 1520px;
   height: auto;
+  object-fit: contain;
 }
 
-.WLRheader-three {
+/* Common styles for all WLR flex containers */
+.WLRheader-three,
+.WLRheader-three-10,
+.WLRheader-three-mok,
+.WLRheader-four {
   display: flex;
-  gap: 20px;
+  gap: clamp(10px, 2vw, 20px);
   justify-content: center;
-  margin-top: 100px;
+  align-items: center;
+  width: 100%;
+  max-width: 1440px;
+  margin: 20px auto;
+  padding: 0 20px;
+  flex-wrap: wrap;
 }
 
-.WLRheader-three-10 {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 20px;
+/* Image styles for flex containers */
+.WLRheader-three img,
+.WLRheader-three-10 img,
+.WLRheader-three-mok img,
+.WLRheader-four img {
+  width: clamp(300px, calc(50% - 20px), 720px);
+  height: auto;
+  object-fit: cover;
 }
 
 .WLRheader-three-mok {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
   margin-top: 20px;
 }
 
-.WLRheader-three-mok img {
-  width: 100%;
-  max-width: 720px;
-  height: auto;
-  object-fit: cover;
-}
-
-.WLRheader-four {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.WLRheader-three img,
-.WLRheader-three-10 img,
-.WLRheader-four img {
-  width: 100%;
-  max-width: 720px;
-  height: auto;
-  object-fit: cover;
-}
-
+/* Special handling for WLRheader-five */
 .WLRheader-five {
   display: flex;
-  gap: 20px;
+  gap: clamp(10px, 2vw, 20px);
   justify-content: center;
   align-items: flex-start;
-  margin-top: 20px;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 20px;
 }
 
 .WLRheader-five img.proto1 {
-  width: 55%;
-}
-
-.WLRheader-five img.proto3 {
-  width: 45%;
-}
-
-.WLRheader-five-six {
-  text-align: center;
-  margin: 40px 0;
-}
-
-.WLRheader-five-six img {
-  width: 100%;
-  max-width: 1520px;
+  width: clamp(300px, 55%, 800px);
   height: auto;
 }
 
+.WLRheader-five img.proto3 {
+  width: clamp(250px, 45%, 650px);
+  height: auto;
+}
+
+/* Poster grid styles */
 .Postergrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: clamp(15px, 2vw, 30px);
   margin-top: 20px;
+  width: 100%;
 }
 
 .Postergrid img {
@@ -190,97 +154,57 @@ nav ul li a:hover::after {
   object-fit: cover;
 }
 
-.copyright {
-  text-align: center;
-  padding: 25px 0;
-  background: #ece9e9;
-  font-weight: 300;
-  margin-top: 100px;
+/* Media Queries */
+@media screen and (min-width: 1440px) {
+  .WLRheader-three,
+  .WLRheader-three-10,
+  .WLRheader-three-mok,
+  .WLRheader-four,
+  .WLRheader-five {
+    padding: 0 clamp(20px, 5%, 40px);
+  }
 }
 
-.highlight-red {
-  color: red;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.highlight-red:hover {
-  color: darkred;
-}
-
-/* Call to Action */
-.call-to-action {
-  margin-top: 6.5%;
-  font-size: clamp(1.5rem, 4vw, 3rem);
-  text-align: left;
-  line-height: 1.4;
-}
-
-.call-to-action h2 {
-  font-size: clamp(2rem, 10.5vw, 5rem);
-}
-
-/* Portfolio Styles */
-
-#Portfolio {
-  padding: 20px 0;
-}
-
-#Portfolio .worklist {
-  display: grid;
-  gap: 40px;
-  grid-template-columns: repeat(2, 1fr);
-  max-width: 2000px;
-  margin: 0 auto;
-}
-
-.img-container {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 744 / 582;
-  overflow: hidden;
-  margin-bottom: 15px;
-}
-
-#Portfolio .work img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s;
-}
-
-.work img:hover {
-  transform: scale(1.1);
-  cursor: pointer;
-}
-
-.work h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-.work p {
-  font-size: 1rem;
-  margin-top: -10px;
-}
-
-.work {
-  margin-bottom: 20px;
-}
-
-.more-projects {
-  font-size: clamp(2rem, 10.5vw, 1.5rem);
-  margin-bottom: 5px;
-  margin-top: 100px;
+@media screen and (max-width: 1024px) {
+  .WLRheader-three img,
+  .WLRheader-three-10 img,
+  .WLRheader-three-mok img,
+  .WLRheader-four img {
+    width: calc(50% - clamp(10px, 2vw, 20px));
+  }
 }
 
 @media screen and (max-width: 768px) {
+  .WLRheader-three,
+  .WLRheader-three-10,
+  .WLRheader-three-mok,
+  .WLRheader-four,
+  .WLRheader-five {
+    flex-direction: column;
+    padding: 0 15px;
+  }
+
+  .WLRheader-three img,
+  .WLRheader-three-10 img,
+  .WLRheader-three-mok img,
+  .WLRheader-four img,
+  .WLRheader-five img.proto1,
+  .WLRheader-five img.proto3 {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .Postergrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
   #Portfolio .worklist {
-    grid-template-columns: 1fr; /* Changes from 2 columns to 1 */
-    gap: 20px; /* Optionally reduce gap for mobile */
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
-/* Responsive Design */
+
 @media screen and (max-width: 480px) {
   .container {
     padding: 10px 3%;
@@ -291,18 +215,9 @@ nav ul li a:hover::after {
     align-items: center;
   }
 
-  nav ul li {
-    margin: 10px 0;
-  }
-
   .playboi-carti h1,
   .playboi-carti h2 {
     font-size: 2rem;
-    text-align: left;
-  }
-
-  .title {
-    font-size: 1.5rem;
     text-align: left;
   }
 
@@ -311,25 +226,6 @@ nav ul li a:hover::after {
   .Paragraph-one-one {
     font-size: 1rem;
     text-align: left;
-  }
-
-  .WLRheader-three,
-  .WLRheader-three-10,
-  .WLRheader-four,
-  .WLRheader-five {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .WLRheader-three img,
-  .WLRheader-three-10 img,
-  .WLRheader-four img {
-    width: 100%;
-  }
-
-  .Postergrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
   }
 }
 
@@ -341,90 +237,8 @@ nav ul li a:hover::after {
 
   .WLRheader-three img,
   .WLRheader-three-10 img,
+  .WLRheader-three-mok img,
   .WLRheader-four img {
     max-width: 900px;
   }
-
-  .playboi-carti h1,
-  .playboi-carti h2 {
-    font-size: 6rem;
-  }
-
-  .Paragraph,
-  .Paragraph-one,
-  .Paragraph-one-one {
-    font-size: 2rem;
-  }
-
-  .Postergrid {
-    grid-template-columns: repeat(5, 1fr);
-    gap: 40px;
-  }
-}
-
-/* Add lightbox CSS */
-.lightbox {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.lightbox.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-.lightbox-content {
-  max-width: 90%;
-  max-height: 90vh;
-  position: relative;
-}
-
-.lightbox-content img {
-  max-width: 100%;
-  max-height: 90vh;
-  object-fit: contain;
-}
-
-.lightbox-close {
-  position: absolute;
-  top: -40px;
-  right: 0;
-  color: white;
-  font-size: 30px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 5px;
-}
-
-.lightbox-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  color: white;
-  font-size: 30px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 20px;
-  z-index: 1000;
-}
-
-.lightbox-prev {
-  left: 20px;
-}
-.lightbox-next {
-  right: 20px;
 }
