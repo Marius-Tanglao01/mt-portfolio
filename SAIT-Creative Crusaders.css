@@ -3,12 +3,15 @@
   padding: 0;
   font-family: "Inter", sans-serif;
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased; /* Added for better text rendering */
 }
 
 body {
   background: #f8f8f8;
   color: #161616;
   line-height: 1.6;
+  width: 100%;
+  overflow-x: hidden; /* Added to prevent horizontal scroll */
 }
 
 .container {
@@ -104,6 +107,7 @@ nav ul li a:hover::after {
   width: 100%;
   max-width: 1520px;
   height: auto;
+  display: block; /* Added for better image handling */
 }
 
 .WLRheader-three {
@@ -111,6 +115,7 @@ nav ul li a:hover::after {
   gap: 20px;
   justify-content: center;
   margin-top: 100px;
+  flex-wrap: wrap; /* Added for responsiveness */
 }
 
 .WLRheader-three-10 {
@@ -118,6 +123,7 @@ nav ul li a:hover::after {
   gap: 20px;
   justify-content: center;
   margin-top: 20px;
+  flex-wrap: wrap; /* Added for responsiveness */
 }
 
 .WLRheader-three-mok {
@@ -125,6 +131,7 @@ nav ul li a:hover::after {
   gap: 20px;
   justify-content: center;
   margin-top: 20px;
+  flex-wrap: wrap; /* Added for responsiveness */
 }
 
 .WLRheader-three-mok img {
@@ -139,6 +146,7 @@ nav ul li a:hover::after {
   gap: 20px;
   justify-content: center;
   margin-top: 20px;
+  flex-wrap: wrap; /* Added for responsiveness */
 }
 
 .WLRheader-three img,
@@ -156,6 +164,7 @@ nav ul li a:hover::after {
   justify-content: center;
   align-items: flex-start;
   margin-top: 20px;
+  flex-wrap: wrap; /* Added for responsiveness */
 }
 
 .WLRheader-five img.proto1 {
@@ -225,8 +234,8 @@ nav ul li a:hover::after {
 
 #Portfolio .worklist {
   display: grid;
-  gap: 40px;
   grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
   max-width: 2000px;
   margin: 0 auto;
 }
@@ -234,7 +243,7 @@ nav ul li a:hover::after {
 .img-container {
   width: 100%;
   height: auto;
-  aspect-ratio: 744 / 582;
+  aspect-ratio: 744/582;
   overflow: hidden;
   margin-bottom: 15px;
 }
@@ -338,7 +347,6 @@ nav ul li a:hover::after {
   right: 20px;
 }
 
-/* MacBook Air (2560 x 1600) */
 @media screen and (min-width: 2560px) and (max-width: 2880px) {
   .container {
     max-width: 2400px;
@@ -378,7 +386,7 @@ nav ul li a:hover::after {
   }
 
   .img-container {
-    aspect-ratio: 16 / 12;
+    aspect-ratio: 16/12;
   }
 
   nav ul li a {
@@ -402,7 +410,6 @@ nav ul li a:hover::after {
   }
 }
 
-/* Pro Display XDR (6016 x 3384) */
 @media screen and (min-width: 6016px) {
   .container {
     max-width: 5600px;
@@ -445,10 +452,6 @@ nav ul li a:hover::after {
     margin-top: -15px;
   }
 
-  .img-container {
-    aspect-ratio: 16 / 12;
-  }
-
   nav ul li {
     margin: 20px 30px;
   }
@@ -486,7 +489,6 @@ nav ul li a:hover::after {
   }
 
   .Postergrid {
-    grid-template-columns: repeat(4, 1fr);
     gap: 60px;
   }
 
@@ -512,11 +514,17 @@ nav ul li a:hover::after {
   }
 }
 
-/* Mobile Responsiveness */
 @media screen and (max-width: 768px) {
   #Portfolio .worklist {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+
+  .WLRheader-three,
+  .WLRheader-three-10,
+  .WLRheader-four,
+  .WLRheader-three-mok {
+    flex-direction: column;
   }
 }
 
@@ -569,5 +577,10 @@ nav ul li a:hover::after {
   .Postergrid {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
+  }
+
+  .WLRheader-five img.proto1,
+  .WLRheader-five img.proto3 {
+    width: 100%;
   }
 }
