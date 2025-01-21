@@ -84,13 +84,12 @@ nav ul li a:hover::after {
 
 .Paragraph,
 .Paragraph-one {
-  margin-bottom: 30px;
+  margin-bottom: 90px;
   font-size: clamp(1.5rem, 3vw, 1.2rem);
-  margin-bottom: 20px;
 }
 
 .Paragraph-one-one {
-  margin-bottom: 30px;
+  margin-bottom: 90px;
   font-size: clamp(1.5rem, 4vw, 1.25rem);
   line-height: 1.6;
 }
