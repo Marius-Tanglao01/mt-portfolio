@@ -117,14 +117,17 @@ nav ul li a:hover::after {
 
 .WLRheader-threetree {
   display: flex;
-  gap: 20px;
+  gap: 15px;
   justify-content: center;
   margin-top: 100px;
+  width: 100%;
+  max-width: 1520px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .WLRheader-threetree img {
-  width: 100%;
-  max-width: 720px;
+  width: calc(50% - 7.5px);
   height: auto;
   object-fit: cover;
 }
@@ -132,8 +135,12 @@ nav ul li a:hover::after {
 .nikegrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 15px;
   margin-top: 100px;
+  width: 100%;
+  max-width: 1520px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .nikegrid img {
@@ -145,15 +152,18 @@ nav ul li a:hover::after {
 .WLRheader-three,
 .WLRheader-three-10 {
   display: flex;
-  gap: 20px;
+  gap: 15px;
   justify-content: center;
   margin-top: 20px;
+  width: 100%;
+  max-width: 1520px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .WLRheader-three img,
 .WLRheader-three-10 img {
-  width: 100%;
-  max-width: 720px;
+  width: calc(50% - 7.5px);
   height: auto;
   object-fit: cover;
 }
@@ -247,9 +257,64 @@ nav ul li a:hover::after {
     grid-template-columns: 1fr; /* Changes from 2 columns to 1 */
     gap: 20px; /* Optionally reduce gap for mobile */
   }
+
+  .WLRheader-three,
+  .WLRheader-three-10,
+  .WLRheader-threetree {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .WLRheader-three img,
+  .WLRheader-three-10 img,
+  .WLRheader-threetree img {
+    width: 100%;
+    max-width: 1520px;
+  }
+
+  .nikegrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-/* Responsive Design */
+@media screen and (min-width: 3072px) {
+  .WLRheader img,
+  .WLRheaderrun img,
+  .WLRheader-three,
+  .WLRheader-three-10,
+  .WLRheader-threetree,
+  .nikegrid {
+    max-width: 2000px;
+  }
+
+  .container {
+    max-width: 2800px;
+    padding: 40px 10%;
+  }
+
+  .nikegrid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 40px;
+  }
+
+  .WLRheader-three img,
+  .WLRheader-three-10 img,
+  .WLRheader-threetree img {
+    max-width: 616px;
+  }
+
+  .playboi-carti h1,
+  .playboi-carti h2 {
+    font-size: 6rem;
+  }
+
+  .Paragraph,
+  .Paragraph-one,
+  .Paragraph-one-one {
+    font-size: 2rem;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .container {
     padding: 10px 3%;
@@ -299,6 +364,28 @@ nav ul li a:hover::after {
   .WLRheader-three-10 img,
   .WLRheader-threetree img {
     width: 100%;
+    max-width: 1520px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .WLRheader-three,
+  .WLRheader-three-10,
+  .WLRheader-threetree,
+  .nikegrid {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .WLRheader-three img,
+  .WLRheader-three-10 img,
+  .WLRheader-threetree img {
+    width: calc(50% - 7.5px);
+  }
+
+  .nikegrid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -308,15 +395,13 @@ nav ul li a:hover::after {
     padding: 40px 10%;
   }
 
+  .WLRheader img,
+  .WLRheaderrun img,
+  .WLRheader-three,
+  .WLRheader-three-10,
+  .WLRheader-threetree,
   .nikegrid {
-    grid-template-columns: repeat(5, 1fr);
-    gap: 40px;
-  }
-
-  .WLRheader-three img,
-  .WLRheader-three-10 img,
-  .WLRheader-threetree img {
-    max-width: 900px;
+    max-width: 2000px;
   }
 
   .playboi-carti h1,

@@ -89,12 +89,15 @@ nav ul li a:hover::after {
   margin-top: 20px;
   text-align: center;
   width: 100%;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .bobaheader img,
 .bobaheader video {
   width: 100%;
-  max-width: 1520px;
+  max-width: 1440px;
   height: auto;
   margin-bottom: 10px;
   object-fit: cover;
@@ -104,12 +107,15 @@ nav ul li a:hover::after {
   margin-top: 20px;
   text-align: center;
   width: 100%;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .bobaheaderig img,
 .bobaheaderig video {
   width: 100%;
-  max-width: 1520px;
+  max-width: 1440px;
   height: auto;
   margin-bottom: 10px;
   object-fit: cover;
@@ -138,28 +144,27 @@ nav ul li a:hover::after {
 .bobaheader-five,
 .bobaheader-six {
   display: flex;
-  gap: clamp(10px, 2vw, 20px);
+  gap: 20px;
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 1520px;
+  max-width: 1440px;
   margin: 20px auto;
   flex-wrap: wrap;
+  padding: 0;
 }
 
 .bobaheader-three img {
-  width: clamp(250px, calc(50% - 20px), 605px);
+  width: calc(50% - 10px);
   height: auto;
   object-fit: cover;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 0;
 }
 
 .bobaheader-four img {
-  width: clamp(200px, calc(33.33% - 20px), 400px);
+  width: calc(33.33% - 14px);
   height: auto;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin: 0;
   object-fit: cover;
 }
 
@@ -170,9 +175,9 @@ nav ul li a:hover::after {
 
 .bobaheader-five img.proto1,
 .bobaheader-five img.proto3 {
-  width: clamp(250px, calc(50% - 20px), 700px);
+  width: calc(50% - 10px);
   height: auto;
-  margin-bottom: 20px;
+  margin: 0;
   object-fit: cover;
 }
 
@@ -183,9 +188,9 @@ nav ul li a:hover::after {
 
 .bobaheader-six img.proto1,
 .bobaheader-six img.proto3 {
-  width: clamp(250px, calc(50% - 20px), 700px);
+  width: calc(50% - 10px);
   height: auto;
-  margin-bottom: 20px;
+  margin: 0;
   object-fit: cover;
 }
 
@@ -355,7 +360,7 @@ nav ul li a:hover::after {
   .bobaheader-four,
   .bobaheader-five,
   .bobaheader-six {
-    padding: 0 20px;
+    padding: 0;
   }
 }
 
@@ -390,7 +395,8 @@ nav ul li a:hover::after {
   .bobaheader-five,
   .bobaheader-six {
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
+    padding: 0 20px;
   }
 
   .bobaheader-three img,
@@ -400,7 +406,8 @@ nav ul li a:hover::after {
   .bobaheader-six img.proto1,
   .bobaheader-six img.proto3 {
     width: 100%;
-    max-width: 500px;
+    max-width: 100%;
+    margin: 0;
   }
 }
 

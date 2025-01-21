@@ -70,6 +70,7 @@ nav ul li a:hover::after {
   font-size: clamp(1.2rem, 5vw, 4rem);
   margin-bottom: 20px;
 }
+
 .playboi-carti h2 {
   font-size: clamp(2rem, 10.5vw, 1.5rem);
   margin-bottom: 20px;
@@ -90,33 +91,32 @@ nav ul li a:hover::after {
 .WLRheader {
   text-align: center;
   margin-top: 100px;
+  width: 100%;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .WLRheader img {
   width: 100%;
-  max-width: 1520px;
+  max-width: 1440px;
   height: auto;
 }
 
-.WLRheaderas {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.WLRheaderas img {
-  width: 100%;
-  max-width: 1520px;
-  height: auto;
-}
-
+.WLRheaderas,
 .WLRheaderyu {
   text-align: center;
   margin-top: 20px;
+  width: 100%;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+.WLRheaderas img,
 .WLRheaderyu img {
   width: 100%;
-  max-width: 1520px;
+  max-width: 1440px;
   height: auto;
 }
 
@@ -126,38 +126,50 @@ nav ul li a:hover::after {
   display: flex;
   gap: 20px;
   justify-content: center;
-  margin-top: 20px;
+  align-items: center;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 1440px;
+  padding: 0;
 }
 
 .WLRheader-three img,
 .WLRheader-three-10 img,
 .WLRheader-four img {
-  width: 100%;
+  width: calc(50% - 10px);
   max-width: 720px;
   height: auto;
   object-fit: cover;
+  margin: 0;
 }
 
 .WLRheader-three-type {
   display: flex;
   gap: 20px;
   justify-content: center;
-  margin-top: 100px;
+  align-items: center;
+  margin: 100px auto 0;
+  width: 100%;
+  max-width: 1440px;
+  padding: 0;
 }
 
 .WLRheader-three-type img {
-  width: 100%;
+  width: calc(50% - 10px);
   max-width: 720px;
   height: auto;
   object-fit: cover;
+  margin: 0;
 }
 
 .WLRwapperz {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 30px;
-  margin: 40px 0 150px;
-  margin-top: 100px;
+  gap: 30px;
+  margin: 100px auto 150px;
+  width: 100%;
+  max-width: 1440px;
+  padding: 0;
 }
 
 .WLRwapperz img {
@@ -197,7 +209,6 @@ nav ul li a:hover::after {
 }
 
 /* Portfolio Styles */
-
 #Portfolio {
   padding: 20px 0;
 }
@@ -215,7 +226,6 @@ nav ul li a:hover::after {
   height: auto;
   aspect-ratio: 744 / 582;
   overflow: hidden;
-
   margin-bottom: 15px;
 }
 
@@ -251,94 +261,7 @@ nav ul li a:hover::after {
   margin-top: 100px;
 }
 
-@media screen and (max-width: 768px) {
-  #Portfolio .worklist {
-    grid-template-columns: 1fr; /* Changes from 2 columns to 1 */
-    gap: 20px; /* Optionally reduce gap for mobile */
-  }
-}
-
-/* Responsive Design */
-@media screen and (max-width: 480px) {
-  .container {
-    padding: 10px 3%;
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav ul li {
-    margin: 10px 0;
-  }
-
-  .playboi-carti h1,
-  .playboi-carti h2 {
-    font-size: 2rem;
-    text-align: left;
-  }
-
-  .title {
-    font-size: 1.5rem;
-    text-align: left;
-  }
-
-  .Paragraph,
-  .Paragraph-one {
-    font-size: 1rem;
-    margin-bottom: 20px;
-    text-align: left;
-  }
-
-  .WLRheader-three,
-  .WLRheader-three-10,
-  .WLRheader-four,
-  .WLRwapperz {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .WLRwapperz {
-    grid-template-columns: 1fr;
-  }
-
-  .WLRheader img,
-  .WLRheader-three img,
-  .WLRheader-three-10 img {
-    width: 100%;
-  }
-}
-
-@media screen and (min-width: 3072px) {
-  .container {
-    max-width: 2800px;
-    padding: 40px 10%;
-  }
-
-  .WLRheader-three img,
-  .WLRheader-three-10 img,
-  .WLRheader-four img {
-    max-width: 900px;
-  }
-
-  .playboi-carti h1,
-  .playboi-carti h2 {
-    font-size: 6rem;
-  }
-
-  .Paragraph,
-  .Paragraph-one {
-    font-size: 2rem;
-  }
-
-  .WLRwapperz {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-  }
-}
-
-/* Add lightbox CSS */
+/* Lightbox styles */
 .lightbox {
   display: none;
   position: fixed;
@@ -401,6 +324,102 @@ nav ul li a:hover::after {
 .lightbox-prev {
   left: 20px;
 }
+
 .lightbox-next {
   right: 20px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  #Portfolio .worklist {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .WLRheader-three,
+  .WLRheader-three-10,
+  .WLRheader-four,
+  .WLRheader-three-type {
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 20px;
+  }
+
+  .WLRheader-three img,
+  .WLRheader-three-10 img,
+  .WLRheader-four img,
+  .WLRheader-three-type img {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .WLRwapperz {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 10px 3%;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  .playboi-carti h1,
+  .playboi-carti h2 {
+    font-size: 2rem;
+    text-align: left;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+
+  .Paragraph,
+  .Paragraph-one {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 3072px) {
+  .container {
+    max-width: 2800px;
+    padding: 40px 10%;
+  }
+
+  .WLRheader-three img,
+  .WLRheader-three-10 img,
+  .WLRheader-four img,
+  .WLRheader-three-type img {
+    max-width: 900px;
+  }
+
+  .playboi-carti h1,
+  .playboi-carti h2 {
+    font-size: 6rem;
+  }
+
+  .Paragraph,
+  .Paragraph-one {
+    font-size: 2rem;
+  }
+
+  .WLRwapperz {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 2800px;
+  }
 }
