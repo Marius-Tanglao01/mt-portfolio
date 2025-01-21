@@ -13,8 +13,9 @@ body {
 }
 
 .container {
-  width: min(100%, 1440px);
-  padding: 20px clamp(20px, 5%, 80px);
+  width: 100%;
+  max-width: 1440px;
+  padding: 20px 5%;
   margin: 0 auto;
   overflow-x: hidden;
 }
@@ -141,7 +142,7 @@ nav ul li a:hover::after {
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 1440px;
+  max-width: 1520px;
   margin: 20px auto;
   flex-wrap: wrap;
 }

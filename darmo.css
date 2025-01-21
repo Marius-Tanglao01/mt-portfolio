@@ -94,6 +94,9 @@ nav ul li a:hover::after {
 [class^="Darmo"] {
   width: 100%;
   margin-top: 20px;
+  max-width: 1520px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .Darmo img {
@@ -146,16 +149,23 @@ nav ul li a:hover::after {
 
 /* Five images layout with specific ratios */
 .Darmo-five {
-  display: grid;
-  grid-template-columns: 70% 30%;
+  display: flex;
   gap: 20px;
-  margin-top: 20px;
   height: 600px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.Darmo-five img.proto1,
+.Darmo-five img.proto1 {
+  width: calc(70% - 10px);
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .Darmo-five img.proto3 {
-  width: 100%;
+  width: calc(30% - 10px);
   height: 100%;
   object-fit: cover;
   object-position: center;
@@ -166,6 +176,10 @@ nav ul li a:hover::after {
   margin-top: 20px;
   margin-bottom: 100px;
   height: 500px;
+  max-width: 1520px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .Darmo-six img {
@@ -183,17 +197,18 @@ nav ul li a:hover::after {
   .Darmo-four {
     grid-template-columns: 1fr;
   }
-  
+
   .Darmo-five {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     height: auto;
   }
-  
+
   .Darmo-five img.proto1,
   .Darmo-five img.proto3 {
+    width: 100%;
     height: 300px;
   }
-  
+
   .Darmo-six {
     height: 300px;
   }
