@@ -96,7 +96,7 @@ nav ul li a:hover::after {
 }
 
 .WLRheader {
-  text-align: center;
+  width: 100%;
   margin-top: 20px;
 }
 
@@ -104,50 +104,48 @@ nav ul li a:hover::after {
   width: 100%;
   max-width: 1520px;
   height: auto;
+  margin: 0 auto;
+  display: block;
 }
 
-.WLRheader-three {
-  display: flex;
+/* Common styles for all flex headers */
+[class^="WLRheader-"] {
+  width: 100%;
+  display: grid;
   gap: 20px;
-  justify-content: center;
-  margin-top: 100px;
-}
-
-.WLRheader-three-10 {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
   margin-top: 20px;
 }
 
+/* Two images layout */
+.WLRheader-three,
+.WLRheader-three-10,
 .WLRheader-three-mok {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 20px;
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.WLRheader-three-mok img {
-  width: 100%;
-  max-width: 720px;
-  height: auto;
-  object-fit: cover;
-}
-
+/* Four images layout */
 .WLRheader-four {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 20px;
+  grid-template-columns: repeat(4, 1fr);
 }
 
-.WLRheader-three img,
-.WLRheader-three-10 img,
-.WLRheader-four img {
+/* All header images common styles */
+[class^="WLRheader-"] img {
   width: 100%;
-  max-width: 720px;
   height: auto;
   object-fit: cover;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .WLRheader-four {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  [class^="WLRheader-"] {
+    grid-template-columns: 1fr;
+  }
 }
 
 .WLRheader-five {
@@ -175,19 +173,6 @@ nav ul li a:hover::after {
   width: 100%;
   max-width: 1520px;
   height: auto;
-}
-
-.Postergrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  margin-top: 20px;
-}
-
-.Postergrid img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
 }
 
 .copyright {
@@ -394,11 +379,11 @@ nav ul li a:hover::after {
     max-width: 2400px;
   }
 
-  .WLRheader-three img,
-  .WLRheader-three-10 img,
-  .WLRheader-four img,
-  .WLRheader-three-mok img {
-    max-width: 1100px;
+  .WLRheader-three,
+  .WLRheader-three-10,
+  .WLRheader-four {
+    gap: 40px;
+    margin-top: 60px;
   }
 }
 
@@ -478,13 +463,6 @@ nav ul li a:hover::after {
     margin-top: 60px;
   }
 
-  .WLRheader-three img,
-  .WLRheader-three-10 img,
-  .WLRheader-four img,
-  .WLRheader-three-mok img {
-    max-width: 2400px;
-  }
-
   .Postergrid {
     grid-template-columns: repeat(4, 1fr);
     gap: 60px;
@@ -516,7 +494,6 @@ nav ul li a:hover::after {
 @media screen and (max-width: 768px) {
   #Portfolio .worklist {
     grid-template-columns: 1fr;
-    gap: 20px;
   }
 }
 
@@ -563,7 +540,6 @@ nav ul li a:hover::after {
   .WLRheader-three img,
   .WLRheader-three-10 img,
   .WLRheader-four img {
-    width: 100%;
   }
 
   .Postergrid {
