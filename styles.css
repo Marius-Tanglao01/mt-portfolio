@@ -76,7 +76,14 @@ nav ul li a:hover::after {
   display: grid;
   grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
   column-gap: clamp(2rem, 6vw, 4rem);
-  align-items: center;
+
+  align-items: center; /* center vertically in row */
+  justify-content: center; /* center content in grid */
+
+  max-width: 1200px; /* center hero block on page */
+  margin-left: auto;
+  margin-right: auto;
+
   position: relative;
 
   opacity: 0;
@@ -105,12 +112,13 @@ nav ul li a:hover::after {
 .playboi-carti p a:hover {
   text-decoration: underline;
 }
+
 /* Headline on the right, top row */
 .playboi-carti h1 {
   grid-column: 2;
   grid-row: 1;
 
-  font-size: clamp(6rem, 6vw, 4.5rem);
+  font-size: clamp(6rem, 6vw, 4.5rem); /* your original clamp */
   margin: 0;
   font-weight: 700;
   letter-spacing: -0.04em;
@@ -124,9 +132,9 @@ nav ul li a:hover::after {
 }
 
 .playboi-carti p {
-  font-size: clamp(1.5rem, 1.3vw, 1.25rem);
+  font-size: clamp(1.5rem, 1.3vw, 1.25rem); /* your original clamp */
   line-height: 1.5;
-  margin-top: -60px;
+  margin-top: -60px; /* your original spacing */
   max-width: 800px;
   color: #333333;
 }
@@ -248,12 +256,13 @@ nav ul li a:hover::after {
     margin: 10px 0;
   }
 
-  /* Hero: stack, keep order: image → H1 → paragraph */
+  /* Hero: stack, left-aligned like before */
   .playboi-carti {
     grid-template-columns: 1fr;
     row-gap: 1.5rem;
     margin-top: 32px;
     padding-bottom: 40px;
+    max-width: 100%;
   }
 
   .profile-image,
@@ -266,7 +275,7 @@ nav ul li a:hover::after {
   .profile-image {
     width: 80vw;
     max-width: 340px;
-    justify-self: start;
+    justify-self: start; /* left-aligned */
   }
 
   .playboi-carti h1 {
@@ -276,7 +285,7 @@ nav ul li a:hover::after {
   .playboi-carti p {
     text-align: left;
     line-height: 1.7;
-    margin-top: -10px;
+    margin-top: -10px; /* your original mobile spacing */
   }
 
   #Portfolio .worklist {
@@ -294,9 +303,11 @@ nav ul li a:hover::after {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  /* Hero stacked, left-aligned, original spacing logic */
   .playboi-carti {
     grid-template-columns: 1fr;
     row-gap: 2rem;
+    max-width: 100%;
   }
 
   .profile-image,
@@ -309,13 +320,17 @@ nav ul li a:hover::after {
   .profile-image {
     width: 65vw;
     max-width: 380px;
-    justify-self: start;
+    justify-self: start; /* left-aligned */
+  }
+
+  .playboi-carti h1 {
+    text-align: left;
   }
 
   .playboi-carti p {
     text-align: left;
     line-height: 1.7;
-    margin-top: -10px;
+    margin-top: -10px; /* your original tablet spacing */
   }
 }
 
@@ -326,12 +341,8 @@ nav ul li a:hover::after {
     padding: 40px 10%;
   }
 
-  .playboi-carti h1 {
-    font-size: 8rem;
-  }
-
-  #Portfolio .worklist {
-    gap: 50px;
+  .playboi-carti {
+    max-width: 1800px;
   }
 
   .img-container {
