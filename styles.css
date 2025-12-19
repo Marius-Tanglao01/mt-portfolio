@@ -285,7 +285,7 @@ nav ul li a:hover::after {
   .playboi-carti p {
     text-align: left;
     line-height: 1.7;
-    margin-top: -10px; /* your original mobile spacing */
+    margin-top: -10px; /* your orig mobile spacing */
   }
 
   #Portfolio .worklist {
@@ -320,7 +320,7 @@ nav ul li a:hover::after {
   .profile-image {
     width: 65vw;
     max-width: 380px;
-    justify-self: start; /* left-aligned */
+    justify-self: start;
   }
 
   .playboi-carti h1 {
@@ -330,7 +330,7 @@ nav ul li a:hover::after {
   .playboi-carti p {
     text-align: left;
     line-height: 1.7;
-    margin-top: -10px; /* your original tablet spacing */
+    margin-top: -10px;
   }
 }
 
