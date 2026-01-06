@@ -310,3 +310,253 @@ details p {
     gap: 20px;
   }
 }
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Work Experience Section */
+.experience-section {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.section-title {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  margin-bottom: 50px;
+  text-align: center;
+  color: #161616;
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.experience-item {
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.experience-header {
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ece9e9;
+}
+
+.experience-title-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.experience-role {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+  color: #161616;
+  margin: 0;
+}
+
+.experience-dates {
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  color: #666;
+  font-weight: 400;
+}
+
+.experience-company-row {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.experience-company {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 500;
+  color: #161616;
+}
+
+.experience-location {
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  color: #666;
+}
+
+.experience-achievements {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.experience-achievements li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 12px;
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  line-height: 1.6;
+  color: #444;
+}
+
+.experience-achievements li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #161616;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.experience-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #ece9e9;
+}
+
+.tool-tag {
+  background: #f8f8f8;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+  color: #161616;
+  font-weight: 500;
+}
+
+/* Education Section */
+.education-section {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.education-item {
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.education-header {
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ece9e9;
+}
+
+.education-title-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.education-degree {
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+  color: #161616;
+  margin: 0;
+}
+
+.education-dates {
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  color: #666;
+  font-weight: 400;
+}
+
+.education-school-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.education-school {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 500;
+  color: #161616;
+}
+
+.education-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.education-highlights li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 12px;
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  line-height: 1.6;
+  color: #444;
+}
+
+.education-highlights li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #161616;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* Responsive Design - Mobile First */
+@media screen and (min-width: 481px) {
+  .experience-title-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .experience-company-row {
+    flex-direction: row;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .education-title-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .experience-section,
+  .education-section {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  .experience-item,
+  .education-item {
+    padding: 25px 20px;
+  }
+
+  .section-title {
+    margin-bottom: 30px;
+  }
+
+  .experience-header,
+  .education-header {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+  }
+}
