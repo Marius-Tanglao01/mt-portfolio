@@ -1,3 +1,4 @@
+/* About.css */
 * {
   margin: 0;
   padding: 0;
@@ -86,192 +87,7 @@ nav ul li a:hover::after {
   display: block;
 }
 
-.about-content .Paragraph p {
-  font-size: clamp(1rem, 2vw, 1.5rem);
-  margin-bottom: 40px;
-}
-
-.Paragraph {
-  margin-bottom: 120px;
-}
-
-/* Tab Section */
-.tab-section {
-  margin-top: 40px;
-}
-
-.tab-titles {
-  display: flex;
-  margin: 20px 0 40px;
-  gap: 50px;
-  justify-content: center;
-}
-
-.tab-links {
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  font-weight: 500;
-  cursor: pointer;
-  position: relative;
-}
-
-.tab-links::after {
-  content: "";
-  width: 0;
-  height: 3px;
-  background: #161616;
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  transition: 0.5s;
-}
-
-.tab-links.active-link::after {
-  width: 50%;
-}
-
-.tab-contents {
-  display: none;
-}
-
-.tab-contents.active-tab {
-  display: block;
-}
-
-.tab-contents ul li {
-  list-style: none;
-  margin: 20px 0;
-}
-
-.tab-contents ul li span {
-  color: #161616;
-  font-weight: 500;
-  font-size: clamp(1.1rem, 2vw, 1.3rem);
-}
-
-/* Services Section */
-#services {
-  padding: 80px 0;
-}
-
-.subtitle {
-  font-size: clamp(1.5rem, 4vw, 4rem);
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.services-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
-  margin-top: 50px;
-}
-
-.services-list div {
-  background: #fff;
-  padding: 40px;
-  border-radius: 15px;
-  transition: transform 0.5s, box-shadow 0.5s;
-}
-
-.services-list div h2 {
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
-  margin-bottom: 15px;
-}
-
-.services-list div:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-}
-
-/* FAQ Section */
-.faq-section {
-  padding: 50px 0;
-}
-
-details {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-details summary {
-  cursor: pointer;
-  padding: 10px;
-  list-style: none;
-}
-
-details summary h2 {
-  display: inline-block;
-  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-}
-
-details summary::-webkit-details-marker {
-  display: none;
-}
-
-details summary::after {
-  content: "+";
-  float: right;
-  font-size: 24px;
-  font-weight: bold;
-  transition: transform 0.3s;
-}
-
-details[open] summary::after {
-  transform: rotate(45deg);
-}
-
-details p {
-  padding: 20px;
-  color: #444;
-  font-size: clamp(1rem, 1.5vw, 1.1rem);
-}
-
-/* Footer */
-.copyright {
-  text-align: center;
-  padding: 25px 0;
-  background: #ece9e9;
-  font-weight: 300;
-  margin-top: 100px;
-}
-
-/* Responsive Design */
-@media screen and (max-width: 480px) {
-  .container {
-    padding: 10px 3%;
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav ul li {
-    margin: 10px 0;
-  }
-
-  .tab-titles {
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-
-  .services-list {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media screen and (min-width: 3072px) {
-  .container {
-    max-width: 2800px;
-    padding: 40px 10%;
-  }
-}
-
-/* Add these styles to your About.css file */
+/* Social Links */
 .social-links {
   display: flex;
   justify-content: center;
@@ -304,22 +120,65 @@ details p {
   width: 100%;
 }
 
-/* Add this media query for responsive design */
-@media screen and (max-width: 480px) {
-  .social-links {
-    gap: 20px;
-  }
+/* Awards (40%) + Paragraph (60%) Flex Layout */
+.about-intro-flex {
+  display: flex;
+  gap: 70px;
+  align-items: flex-start;
 }
 
-/* Reduced Motion Support */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+/* awards = 40% */
+.about-intro-flex .awards-section {
+  flex: 0 0 30%;
+  margin: 0; /* remove the big margins from the standalone awards section */
+}
+
+/* paragraph = 60% */
+.about-intro-flex .Paragraph {
+  flex: 0 0 60%;
+  margin-bottom: 50px;
+}
+
+.about-content .Paragraph p {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  margin-bottom: 40px;
+}
+
+/* Awards Section (card styling) */
+.awards-section h2 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  margin-bottom: 25px;
+  text-align: left;
+  color: #161616;
+}
+
+.awards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.award-title {
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  font-weight: 600;
+  color: #161616;
+  margin-bottom: 4px;
+}
+
+.award-event {
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  font-weight: 600;
+  font-style: italic;
+  color: #161616;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #b1afaf;
+}
+
+.award-description {
+  font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+  line-height: 1.6;
+  color: #444;
 }
 
 /* Work Experience Section */
@@ -388,11 +247,6 @@ details p {
   color: #161616;
 }
 
-.experience-location {
-  font-size: clamp(0.9rem, 1.5vw, 1rem);
-  color: #666;
-}
-
 .experience-achievements {
   list-style: none;
   padding: 0;
@@ -415,24 +269,6 @@ details p {
   color: #161616;
   font-weight: bold;
   font-size: 1.2em;
-}
-
-.experience-tools {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top: 1px solid #ece9e9;
-}
-
-.tool-tag {
-  background: #f8f8f8;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
-  color: #161616;
-  font-weight: 500;
 }
 
 /* Education Section */
@@ -517,7 +353,119 @@ details p {
   font-size: 1.2em;
 }
 
-/* Responsive Design - Mobile First */
+/* FAQ Section */
+.faq-section {
+  padding: 50px 0;
+}
+
+details {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+details summary {
+  cursor: pointer;
+  padding: 10px;
+  list-style: none;
+}
+
+details summary h2 {
+  display: inline-block;
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary::after {
+  content: "+";
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+
+details[open] summary::after {
+  transform: rotate(45deg);
+}
+
+details p {
+  padding: 20px;
+  color: #444;
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
+}
+
+/* Footer */
+.copyright {
+  text-align: center;
+  padding: 25px 0;
+  background: #ece9e9;
+  font-weight: 300;
+  margin-top: 100px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 900px) {
+  .about-intro-flex {
+    flex-direction: column;
+  }
+
+  .about-intro-flex .awards-section,
+  .about-intro-flex .Paragraph {
+    flex: 1 1 auto;
+  }
+
+  .about-intro-flex .Paragraph {
+    margin-bottom: 80px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 10px 3%;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  .social-links {
+    gap: 20px;
+  }
+
+  .experience-section,
+  .education-section {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  .experience-item,
+  .education-item {
+    padding: 25px 20px;
+  }
+
+  .section-title {
+    margin-bottom: 30px;
+  }
+
+  .experience-header,
+  .education-header {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+  }
+}
+
+/* Responsive Design - Desktop row formatting */
 @media screen and (min-width: 481px) {
   .experience-title-row {
     flex-direction: row;
@@ -538,25 +486,20 @@ details p {
   }
 }
 
-@media screen and (max-width: 480px) {
-  .experience-section,
-  .education-section {
-    margin-top: 60px;
-    margin-bottom: 60px;
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
+}
 
-  .experience-item,
-  .education-item {
-    padding: 25px 20px;
-  }
-
-  .section-title {
-    margin-bottom: 30px;
-  }
-
-  .experience-header,
-  .education-header {
-    margin-bottom: 20px;
-    padding-bottom: 15px;
+@media screen and (min-width: 3072px) {
+  .container {
+    max-width: 2800px;
+    padding: 40px 10%;
   }
 }
