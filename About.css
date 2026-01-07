@@ -141,7 +141,7 @@ nav ul li a:hover::after {
 
 .about-content .Paragraph p {
   font-size: clamp(1rem, 2vw, 1.5rem);
-  margin-bottom: 40px;
+  margin-bottom: 35px;
 }
 
 /* Awards Section (card styling) */
@@ -160,7 +160,7 @@ nav ul li a:hover::after {
 
 .award-title {
   font-size: clamp(1.1rem, 2.2vw, 1.4rem);
-  font-weight: 600;
+  font-weight: 700;
   color: #161616;
   margin-bottom: 4px;
 }
@@ -224,7 +224,7 @@ nav ul li a:hover::after {
 
 .experience-role {
   font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-  font-weight: 600;
+  font-weight: 700;
   color: #161616;
   margin: 0;
 }
@@ -244,6 +244,7 @@ nav ul li a:hover::after {
 .experience-company {
   font-size: clamp(1rem, 2vw, 1.2rem);
   font-weight: 500;
+  font-style: italic;
   color: #161616;
 }
 
@@ -307,7 +308,7 @@ nav ul li a:hover::after {
 
 .education-degree {
   font-size: clamp(1.2rem, 2.5vw, 1.5rem);
-  font-weight: 600;
+  font-weight: 700;
   color: #161616;
   margin: 0;
 }
@@ -326,6 +327,7 @@ nav ul li a:hover::after {
 .education-school {
   font-size: clamp(1rem, 2vw, 1.2rem);
   font-weight: 500;
+  font-style: italic;
   color: #161616;
 }
 
