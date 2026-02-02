@@ -287,6 +287,37 @@
     </main>
 
     <footer class="copyright">2026 Marius Tanglao – All rights reserved</footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script src="Darmo.js" defer></script>
+    <script>
+      // Back to Top Button
+      document.addEventListener("DOMContentLoaded", function () {
+        const backToTopBtn = document.querySelector(".back-to-top");
+        if (!backToTopBtn) return;
+
+        function toggleBackToTop() {
+          if (window.pageYOffset > 300) {
+            backToTopBtn.classList.add("show");
+          } else {
+            backToTopBtn.classList.remove("show");
+          }
+        }
+
+        function scrollToTop() {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        }
+
+        window.addEventListener("scroll", toggleBackToTop);
+        backToTopBtn.addEventListener("click", scrollToTop);
+      });
+    </script>
   </body>
 </html>
