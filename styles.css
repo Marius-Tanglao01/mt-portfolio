@@ -23,7 +23,9 @@ body {
   background: var(--bg-color);
   color: var(--text-color);
   line-height: 1.6;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 /* Dark Mode */
@@ -322,13 +324,45 @@ nav ul li a:hover::after {
   margin-bottom: 20px;
 }
 
-/* Call to Action */
-.call-to-action-playboi-carti {
+/* Call to action (footer CTA) */
+.cta-block {
   margin-top: 6.5%;
-  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-size: clamp(2rem, 10.5vw, 5rem);
   text-align: left;
   line-height: 1.4;
   margin-bottom: 80px;
+}
+
+.cta-block h2 {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* Inline CTA link (same weight/size as heading copy; red like former .highlight-red) */
+.cta-button {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  color: red;
+  background: none;
+  border: none;
+  border-radius: 0;
+  text-decoration: none;
+  vertical-align: baseline;
+  transition: color 0.3s ease;
+}
+
+.cta-button:hover {
+  color: darkred;
+}
+
+.cta-button:focus-visible {
+  outline: 2px solid var(--text-color);
+  outline-offset: 2px;
 }
 
 .highlight-red {
@@ -371,8 +405,12 @@ nav ul li a:hover::after {
   opacity: 0;
   visibility: hidden;
   transform: translateY(20px) scale(0.8);
-  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease,
-    background 0.3s ease, color 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 

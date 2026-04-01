@@ -261,16 +261,43 @@ nav ul li a:hover::after {
   }
 }
 
-/* Call to Action */
-.call-to-action {
+/* Call to action (footer CTA) */
+.cta-block {
   margin-top: 6.5%;
   font-size: clamp(1.5rem, 4vw, 3rem);
   text-align: left;
   line-height: 1.4;
 }
 
-.call-to-action h2 {
+.cta-block h2 {
   font-size: clamp(2rem, 10.5vw, 5rem);
+  line-height: 1.2;
+}
+
+.cta-button {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  color: red;
+  background: none;
+  border: none;
+  border-radius: 0;
+  text-decoration: none;
+  vertical-align: baseline;
+  transition: color 0.3s ease;
+}
+
+.cta-button:hover {
+  color: darkred;
+}
+
+.cta-button:focus-visible {
+  outline: 2px solid #161616;
+  outline-offset: 2px;
 }
 
 /* Responsive Design */
