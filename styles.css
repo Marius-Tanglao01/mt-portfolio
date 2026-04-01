@@ -15,6 +15,8 @@
   --card-bg: #fff;
   --card-shadow: rgba(0, 0, 0, 0.05);
   --hr-color: #161616;
+  /* Space between hero headline and body (matches desktop rhythm on small screens) */
+  --hero-headline-body-gap: clamp(1.75rem, 4.5vw, 3rem);
 }
 
 body {
@@ -120,38 +122,41 @@ nav ul li a:hover::after {
   width: 100%;
 }
 
-/* ===== HERO LAYOUT (Conventional: Image Left, Text Right) ===== */
+/* ===== HERO LAYOUT (Desktop: image left, text right — unchanged above 992px) ===== */
 
 .playboi-carti {
   margin-top: clamp(40px, 8vh, 80px);
   padding: clamp(20px, 4vh, 40px) 0 clamp(40px, 8vh, 80px);
-
-  display: grid;
-  grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
-  column-gap: clamp(2rem, 6vw, 4rem);
-
-  align-items: center; /* center vertically in row */
-  justify-content: center; /* center content in grid */
-
-  max-width: 1200px; /* center hero block on page */
-  margin-left: auto;
-  margin-right: auto;
-
   position: relative;
-
   opacity: 0;
   animation: heroFadeIn 0.7s ease-out forwards;
 }
 
-/* Hero Image on the left */
-.profile-image {
+/* Inner wrapper: grid on large screens; .hero-text uses display:contents so h1 + copy stay in the same grid */
+.playboi-carti .hero-container {
+  display: grid;
+  grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
+  column-gap: clamp(2rem, 6vw, 4rem);
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Flatten text column so headline + paragraph align to the same grid as before */
+.playboi-carti .hero-text {
+  display: contents;
+}
+
+/* Hero image (left column, spans both rows) */
+.playboi-carti .profile-image {
   grid-column: 1;
   grid-row: 1 / span 2;
   width: 100%;
   max-width: 320px;
   object-fit: cover;
   display: block;
-
   opacity: 0;
   animation: heroImageIn 0.9s ease-out forwards;
   animation-delay: 0.12s;
@@ -166,30 +171,83 @@ nav ul li a:hover::after {
   text-decoration: underline;
 }
 
-/* Headline on the right, top row */
-.playboi-carti h1 {
+.playboi-carti .hero-text h1 {
   grid-column: 2;
   grid-row: 1;
-
-  font-size: clamp(6rem, 6vw, 4.5rem); /* your original clamp */
+  font-size: clamp(6rem, 6vw, 4.5rem);
   margin: 0;
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.02;
 }
 
-/* Paragraph on the right, below the headline */
-.playboi-carti > div {
+.playboi-carti .hero-text > div {
   grid-column: 2;
   grid-row: 2;
 }
 
 .playboi-carti p {
-  font-size: clamp(1.5rem, 1.3vw, 1.25rem); /* your original clamp */
+  font-size: clamp(1.5rem, 1.3vw, 1.25rem);
   line-height: 1.5;
-  margin-top: -60px; /* your original spacing */
+  margin-top: -60px;
   max-width: 800px;
   color: var(--text-secondary);
+}
+
+/* ----- Hero: tablets & mobile (≤992px) — stack, center, fix negative overlap ----- */
+@media screen and (max-width: 992px) {
+  .playboi-carti .hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    row-gap: clamp(1.5rem, 4vw, 2.5rem);
+    column-gap: 0;
+    max-width: 100%;
+    padding-left: clamp(12px, 3vw, 28px);
+    padding-right: clamp(12px, 3vw, 28px);
+  }
+
+  .playboi-carti .hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    /* Mirrors desktop headline ↔ body separation; restores hierarchy when stacked */
+    gap: var(--hero-headline-body-gap);
+  }
+
+  .playboi-carti .profile-image {
+    grid-column: auto;
+    grid-row: auto;
+    width: min(100%, 320px);
+    max-width: 320px;
+    height: auto;
+    flex-shrink: 0;
+  }
+
+  .playboi-carti .hero-text h1 {
+    grid-column: auto;
+    grid-row: auto;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .playboi-carti .hero-text > div {
+    grid-column: auto;
+    grid-row: auto;
+    width: 100%;
+    max-width: 42rem;
+  }
+
+  .playboi-carti p {
+    /* .hero-text gap handles headline/body spacing; keep paragraph flush in its column */
+    margin-top: 0;
+    text-align: center;
+    max-width: 100%;
+    line-height: 1.7;
+  }
 }
 
 /* ===== HERO ANIMATION (subtle) ===== */
@@ -365,36 +423,9 @@ nav ul li a:hover::after {
     margin: 10px 0;
   }
 
-  /* Hero: stack, left-aligned like before */
   .playboi-carti {
-    grid-template-columns: 1fr;
-    row-gap: 1.5rem;
     margin-top: 32px;
     padding-bottom: 40px;
-    max-width: 100%;
-  }
-
-  .profile-image,
-  .playboi-carti h1,
-  .playboi-carti > div {
-    grid-column: 1;
-    grid-row: auto;
-  }
-
-  .profile-image {
-    width: 80vw;
-    max-width: 340px;
-    justify-self: start; /* left-aligned */
-  }
-
-  .playboi-carti h1 {
-    text-align: left;
-  }
-
-  .playboi-carti p {
-    text-align: left;
-    line-height: 1.7;
-    margin-top: -10px; /* your orig mobile spacing */
   }
 
   #Portfolio .worklist {
@@ -426,36 +457,6 @@ nav ul li a:hover::after {
   #Portfolio .worklist {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  /* Hero stacked, left-aligned, original spacing logic */
-  .playboi-carti {
-    grid-template-columns: 1fr;
-    row-gap: 2rem;
-    max-width: 100%;
-  }
-
-  .profile-image,
-  .playboi-carti h1,
-  .playboi-carti > div {
-    grid-column: 1;
-    grid-row: auto;
-  }
-
-  .profile-image {
-    width: 65vw;
-    max-width: 380px;
-    justify-self: start;
-  }
-
-  .playboi-carti h1 {
-    text-align: left;
-  }
-
-  .playboi-carti p {
-    text-align: left;
-    line-height: 1.7;
-    margin-top: -10px;
-  }
 }
 
 /* Large Screens & 3072x1920 */
@@ -465,7 +466,7 @@ nav ul li a:hover::after {
     padding: 40px 10%;
   }
 
-  .playboi-carti {
+  .playboi-carti .hero-container {
     max-width: 1800px;
   }
 
