@@ -89,7 +89,51 @@
     <link rel="stylesheet" href="mobile-nav.css" />
     <script src="mobile-nav.js" defer></script>
   </head>
-  <body>
+  <body class="archive-locked">
+    <script>
+      if (sessionStorage.getItem("archiveUnlocked") === "1") {
+        document.body.classList.remove("archive-locked");
+      }
+    </script>
+    <div
+      id="archive-gate"
+      class="archive-gate"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="archive-gate-title"
+    >
+      <div class="archive-gate__panel">
+        <h1 id="archive-gate-title" class="archive-gate__title">
+          Private archive
+        </h1>
+        <p class="archive-gate__hint">
+          This page contains private projects. Enter the password to continue.
+        </p>
+        <form id="archive-gate-form" class="archive-gate__form" novalidate>
+          <label for="archive-password" class="archive-gate__label"
+            >Password</label
+          >
+          <input
+            type="password"
+            id="archive-password"
+            name="password"
+            class="archive-gate__input"
+            autocomplete="current-password"
+            required
+          />
+          <p
+            id="archive-gate-error"
+            class="archive-gate__error"
+            hidden
+            role="alert"
+          >
+            Incorrect password. Please try again.
+          </p>
+          <button type="submit" class="archive-gate__submit">Continue</button>
+        </form>
+      </div>
+    </div>
+    <div id="archive-protected">
     <header id="header">
       <div class="container">
         <nav>
@@ -215,6 +259,7 @@
     <button class="back-to-top" aria-label="Back to top">
       <i class="fas fa-arrow-up"></i>
     </button>
+    </div>
 
     <script src="archive.js"></script>
     <script>

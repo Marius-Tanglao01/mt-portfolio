@@ -13,6 +13,100 @@ body {
     sans-serif;
 }
 
+/* Password gate (private archive) */
+body.archive-locked #archive-protected {
+  display: none !important;
+}
+
+body:not(.archive-locked) #archive-gate {
+  display: none !important;
+}
+
+.archive-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: #f8f8f8;
+}
+
+.archive-gate__panel {
+  width: 100%;
+  max-width: 400px;
+  padding: 32px 28px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.archive-gate__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.archive-gate__hint {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.archive-gate__form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.archive-gate__label {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.archive-gate__input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #f8f8f8;
+  color: #161616;
+  font-family: inherit;
+}
+
+.archive-gate__input:focus {
+  outline: none;
+  border-color: #161616;
+  box-shadow: 0 0 0 2px rgba(22, 22, 22, 0.15);
+}
+
+.archive-gate__error {
+  font-size: 0.875rem;
+  color: #b00020;
+  margin: -4px 0 0;
+}
+
+.archive-gate__submit {
+  margin-top: 8px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: inherit;
+  color: #f8f8f8;
+  background: #161616;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.archive-gate__submit:hover {
+  background: #333;
+}
+
 .container {
   width: 100%;
   max-width: 1440px;
