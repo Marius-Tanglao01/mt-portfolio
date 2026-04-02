@@ -3,6 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function () {
+        try {
+          var s = localStorage.getItem("theme");
+          if (s !== "dark" && s !== "light")
+            s = window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+          document.documentElement.setAttribute("data-theme", s);
+        } catch (e) {}
+      })();
+    </script>
+
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Marius | Design Portfolio</title>
     <link rel="stylesheet" href="ITE.css" />
@@ -85,6 +98,7 @@
       content="https://mt-portfolio-rho.vercel.app/Images/66bc6037b79c3032616ce013_fave questers brand identity .webp"
     />
     <link rel="stylesheet" href="mobile-nav.css" />
+    <link rel="stylesheet" href="premium.css" />
     <script src="mobile-nav.js" defer></script>
   </head>
 
@@ -318,7 +332,10 @@
       <button class="lightbox-nav lightbox-next">&gt;</button>
     </div>
     <script src="FAVE Questers.js" defer></script>
-    <div class="copyright">© 2026 Marius Tanglao – All rights reserved</div>
+    <footer class="copyright">
+      <p class="copyright__text">© 2026 Marius Tanglao – All rights reserved</p>
+      <button type="button" class="footer-theme-egg" aria-label="Toggle color theme" title="Theme"></button>
+    </footer>
 
     <!-- Back to Top Button -->
     <button class="back-to-top" aria-label="Back to top">
@@ -350,5 +367,6 @@
         backToTopBtn.addEventListener("click", scrollToTop);
       });
     </script>
+    <script src="premium.js" defer></script>
   </body>
 </html>
