@@ -290,7 +290,7 @@ nav ul li a:hover::after {
 /* Call to action (footer CTA) */
 .cta-block {
   margin-top: 6.5%;
-  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-size: clamp(2rem, 10.5vw, 5rem);
   text-align: left;
   line-height: 1.4;
 }
@@ -366,7 +366,10 @@ nav ul li a:hover::after {
   opacity: 0;
   visibility: hidden;
   transform: translateY(20px) scale(0.8);
-  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease,
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s ease,
     background 0.3s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
@@ -420,7 +423,9 @@ nav ul li a:hover::after {
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
 }
 
 .lightbox.active {
