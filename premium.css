@@ -222,3 +222,8 @@ html.cursor-enabled .mt-cursor__dot {
   }
 }
 
+/* Constrain paragraph line length site-wide, except opted-out pages. */
+body:not(.no-paragraph-limit) p {
+  max-width: 60ch !important;
+}
+
