@@ -132,12 +132,13 @@ nav ul li a:hover::after {
 
 /* ===== HERO LAYOUT (Text-first editorial composition) ===== */
 
+/* Hero: stay visible without relying on animation (Reduce Motion / flaky animation = invisible otherwise). */
 .playboi-carti {
   margin-top: clamp(40px, 8vh, 80px);
   padding: clamp(36px, 7vh, 76px) 0 clamp(36px, 7vh, 76px);
   position: relative;
-  opacity: 0;
-  animation: heroFadeIn 0.7s ease-out forwards;
+  opacity: 1;
+  transform: none;
 }
 
 .playboi-carti .hero-container {
@@ -192,7 +193,6 @@ nav ul li a:hover::after {
   min-width: 0;
   overflow-wrap: break-word;
   word-wrap: break-word;
-  animation: heroTextIn 0.7s ease-out both;
 }
 
 .playboi-carti p {
@@ -205,8 +205,6 @@ nav ul li a:hover::after {
   color: var(--text-secondary);
   overflow-wrap: break-word;
   word-wrap: break-word;
-  animation: heroTextIn 0.8s ease-out both;
-  animation-delay: 0.12s;
 }
 
 /* ----- Hero: tablets & mobile (≤992px) ----- */
@@ -255,11 +253,20 @@ nav ul li a:hover::after {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .playboi-carti,
-  .playboi-carti .hero-text h1,
+/* Entrance motion only when user allows motion — never leave hero at opacity:0. */
+@media (prefers-reduced-motion: no-preference) {
+  .playboi-carti {
+    opacity: 0;
+    animation: heroFadeIn 0.7s ease-out forwards;
+  }
+
+  .playboi-carti .hero-text h1 {
+    animation: heroTextIn 0.7s ease-out both;
+  }
+
   .playboi-carti p {
-    animation: none;
+    animation: heroTextIn 0.8s ease-out both;
+    animation-delay: 0.12s;
   }
 }
 
