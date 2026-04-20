@@ -128,7 +128,7 @@ nav ul li a:hover::after {
 
 .playboi-carti {
   margin-top: clamp(40px, 8vh, 80px);
-  padding: clamp(36px, 7vh, 76px) 0 clamp(56px, 9vh, 96px);
+  padding: clamp(36px, 7vh, 76px) 0 clamp(36px, 7vh, 76px);
   position: relative;
   opacity: 0;
   animation: heroFadeIn 0.7s ease-out forwards;
