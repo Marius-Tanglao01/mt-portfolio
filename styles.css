@@ -5,6 +5,12 @@
   box-sizing: border-box;
 }
 
+/* Safari / iOS: prevent odd text scaling; keep layout math predictable */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 :root {
   --bg-color: #f8f8f8;
   --text-color: #161616;
@@ -146,7 +152,10 @@ nav ul li a:hover::after {
   flex-direction: column;
   align-items: center;
   gap: clamp(0.5rem, 1.8vw, 1.05rem);
+  width: 100%;
   max-width: 68rem;
+  min-width: 0;
+  margin-inline: auto;
   text-align: center;
 }
 
@@ -173,20 +182,29 @@ nav ul li a:hover::after {
 }
 
 .playboi-carti .hero-text h1 {
-  font-size: clamp(6rem, 6vw, 4.5rem);
+  /* clamp(MIN, PREFERRED, MAX) — MIN must be ≤ MAX (invalid clamp breaks Safari) */
+  font-size: clamp(2.25rem, 5.5vw + 1.25rem, 6rem);
   margin: 0;
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.02;
+  max-width: 100%;
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
   animation: heroTextIn 0.7s ease-out both;
 }
 
 .playboi-carti p {
-  font-size: clamp(1.5rem, 1.3vw, 1.25rem);
+  font-size: clamp(1.05rem, 1.1vw + 0.85rem, 1.5rem);
   line-height: 1.7;
   margin: 0;
   max-width: 52ch;
+  width: 100%;
+  min-width: 0;
   color: var(--text-secondary);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
   animation: heroTextIn 0.8s ease-out both;
   animation-delay: 0.12s;
 }

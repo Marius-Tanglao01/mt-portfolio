@@ -72,7 +72,7 @@ nav ul li a:hover::after {
 }
 
 .playboi-carti h2 {
-  font-size: clamp(2rem, 10.5vw, 1.5rem);
+  font-size: clamp(1.5rem, 4vw, 2rem);
   margin-bottom: 20px;
 }
 
@@ -85,7 +85,7 @@ nav ul li a:hover::after {
 .Paragraph,
 .Paragraph-one {
   margin-bottom: 30px;
-  font-size: clamp(1.5rem, 3vw, 1.2rem);
+  font-size: clamp(1.05rem, 2.5vw, 1.5rem);
 }
 
 .WLRheader {
@@ -120,45 +120,71 @@ nav ul li a:hover::after {
   height: auto;
 }
 
+/* 2–3 images per row: fluid columns, no overflow (Safari / Mac) */
 .WLRheader-three,
-.WLRheader-three-10,
-.WLRheader-four {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
+.WLRheader-three-10 {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, 220px), 1fr)
+  );
+  gap: clamp(12px, 2vw, 20px);
+  align-items: stretch;
+  justify-items: stretch;
   margin: 20px auto;
   width: 100%;
-  max-width: 1440px;
-  padding: 0;
+  max-width: 100%;
+  min-width: 0;
+  padding: 0 clamp(8px, 2vw, 20px);
+  box-sizing: border-box;
+}
+
+/* Three-image row: was using 50% widths → overflowed past container */
+.WLRheader-four {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(12px, 2vw, 20px);
+  align-items: stretch;
+  justify-items: stretch;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  padding: 0 clamp(8px, 2vw, 20px);
+  box-sizing: border-box;
 }
 
 .WLRheader-three img,
 .WLRheader-three-10 img,
 .WLRheader-four img {
-  width: calc(50% - 10px);
-  max-width: 720px;
+  width: 100%;
+  max-width: 100%;
   height: auto;
   object-fit: cover;
+  display: block;
   margin: 0;
 }
 
 .WLRheader-three-type {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(12px, 2vw, 20px);
+  align-items: stretch;
+  justify-items: stretch;
   margin: 20px auto 0;
   width: 100%;
-  max-width: 1440px;
-  padding: 0;
+  max-width: 100%;
+  min-width: 0;
+  padding: 0 clamp(8px, 2vw, 20px);
+  box-sizing: border-box;
 }
 
 .WLRheader-three-type img {
-  width: calc(50% - 10px);
-  max-width: 720px;
+  width: 100%;
+  max-width: 100%;
   height: auto;
   object-fit: cover;
+  display: block;
   margin: 0;
 }
 
@@ -426,9 +452,9 @@ nav ul li a:hover::after {
   .WLRheader-three-10,
   .WLRheader-four,
   .WLRheader-three-type {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: 15px;
-    padding: 0 20px;
+    padding: 0 clamp(12px, 4vw, 20px);
   }
 
   .WLRheader-three img,
@@ -490,7 +516,7 @@ nav ul li a:hover::after {
   .WLRheader-three-10 img,
   .WLRheader-four img,
   .WLRheader-three-type img {
-    max-width: 900px;
+    max-width: 100%;
   }
 
   .playboi-carti h1,
