@@ -1,0 +1,22 @@
+/* ==========================================================================
+   Self-hosted Inter (variable) — load this file early in <head>
+   Paths are root-relative for consistent behavior when deployed at /
+   ========================================================================== */
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/Inter-VariableFont_opsz,wght.woff2") format("woff2-variations"),
+    url("/fonts/Inter-VariableFont_opsz,wght.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/Inter-Italic-VariableFont_opsz,wght.woff2") format("woff2-variations"),
+    url("/fonts/Inter-Italic-VariableFont_opsz,wght.woff2") format("woff2");
+}

@@ -241,3 +241,32 @@ footer.copyright .copyright__text {
   display: block;
 }
 
+/* ==========================================================================
+   Site-wide Inter (self-hosted variable) — loads after page CSS
+   ========================================================================== */
+
+:root {
+  --mt-font-sans: "Inter", system-ui, ui-sans-serif, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+html {
+  font-family: var(--mt-font-sans);
+  font-optical-sizing: auto;
+}
+
+body {
+  font-family: inherit;
+  font-optical-sizing: inherit;
+}
+
+button,
+input,
+textarea,
+select,
+optgroup {
+  font-family: inherit;
+  font-optical-sizing: inherit;
+}
