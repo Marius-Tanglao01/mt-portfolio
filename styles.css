@@ -1,12 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: var(
-    --mt-font-sans,
-    "Inter",
-    system-ui,
-    sans-serif
-  );
+  font-family: var(--mt-font-sans, "Inter", system-ui, sans-serif);
   box-sizing: border-box;
 }
 
@@ -157,7 +152,7 @@ nav ul li a:hover::after {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(0.5rem, 1.8vw, 1.05rem);
+  gap: clamp(1.5rem, 1.8vw, 1.05rem);
   width: 100%;
   max-width: 68rem;
   min-width: 0;
@@ -202,7 +197,7 @@ nav ul li a:hover::after {
 
 .playboi-carti p {
   font-size: clamp(1.05rem, 1.1vw + 0.85rem, 1.5rem);
-  line-height: 1.7;
+  line-height: 1.6;
   margin: 0;
   max-width: 52ch;
   width: 100%;
@@ -328,7 +323,7 @@ nav ul li a:hover::after {
   margin-top: 6.5%;
   font-size: clamp(2rem, 10.5vw, 5rem);
   text-align: left;
-  line-height: 1.4;
+  line-height: 1.2;
   margin-bottom: 80px;
 }
 
