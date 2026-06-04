@@ -88,6 +88,16 @@ nav ul li a:hover::after {
   font-size: clamp(1.5rem, 3vw, 1.2rem);
 }
 
+.Paragraph-one p a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.14em;
+}
+
+.Paragraph-one p a:hover {
+  color: #444;
+}
+
 .WLRheader {
   text-align: center;
   margin-top: 100px;
