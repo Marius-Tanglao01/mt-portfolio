@@ -1,6 +1,6 @@
 // Select all images from the HTML
 const images = document.querySelectorAll(
-  ".WLRheader img, .WLRheaderas img, .WLRheaderyu img, .WLRheader-four img, .WLRheader-three-10 img, .WLRheader-three img, .WLRheader-three-type img, .WLRwapperz img" // Selects all images within <figure> elements
+  ".WLRheader img, .WLRheaderas img, .WLRheaderyu img, .WLRheader-four img, .WLRheader-three-10 img, .WLRheader-three img, .WLRheader-three-type img, .WLRwapperz img", // Selects all images within <figure> elements
 );
 
 const lightbox = document.querySelector(".lightbox");
